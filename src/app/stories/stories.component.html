@@ -1,16 +1,20 @@
-
 <div class="main-content">
-  <ol>
-    <li *ngFor="let item of items | slice:0:30" class="post">
-      <item class="item-block" itemID="{{ item }}"></item>
-    </li>
-  </ol>
-  <div class="nav">
-    <a href="" class="prev">
-      ‹ Prev
-    </a>
-    <a href="" class="more">
-      More ›
-    </a>
-  <div>
+  <div class="loading-section" *ngIf="!items">
+    <!-- You can add a loading indicator here if you want to :) -->
+  </div>
+  <div *ngIf="items">
+    <ol start="{{ listStart }}">
+      <li *ngFor="let item of items" class="post">
+        <item class="item-block" [item]="item"></item>
+      </li>
+    </ol>
+    <div class="nav">
+      <a *ngIf="listStart !== 1" [routerLink]="['/' + storiesType, pageNum - 1]" class="prev">
+        ‹ Prev
+      </a>
+      <a *ngIf="items.length === 30" [routerLink]="['/' + storiesType, pageNum + 1]" class="more">
+        More ›
+      </a>
+    <div>
+  </div>
 </div>

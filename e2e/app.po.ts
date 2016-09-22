@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor/globals';
 
-export class HackerNewsAngular2ClonePage {
+export class Angular2HnPage {
   navigateTo() {
     return browser.get('/');
   }

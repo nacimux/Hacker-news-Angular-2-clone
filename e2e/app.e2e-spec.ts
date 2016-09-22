@@ -1,10 +1,10 @@
-import { HackerNewsAngular2ClonePage } from './app.po';
+import { Angular2HnPage } from './app.po';
 
-describe('hacker-news-angular-2-clone App', function() {
-  let page: HackerNewsAngular2ClonePage;
+describe('angular2-hn App', function() {
+  let page: Angular2HnPage;
 
   beforeEach(() => {
-    page = new HackerNewsAngular2ClonePage();
+    page = new Angular2HnPage();
   });
 
   it('should display message saying app works', () => {
